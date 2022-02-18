@@ -1,16 +1,16 @@
 /* CHEAT DATE (DOS) - zajebi shareware programe koji citaju system date */
 
-#include <stdio.h>					// za FILE
-#include <dos.h>					// za struct date
+#include <stdio.h>				// za FILE
+#include <dos.h>				// za struct date
 #include <process.h>				// za spawn
 
 #define DEBUG
 
 main()
- { 	 FILE *fp;	 	 		  // jedan file pointer za sve (samo jedna datoteka istodobno otvorena)
+ { 	 FILE *fp;	 	  // jedan file pointer za sve (samo jedna datoteka istodobno otvorena)
 	 char ImeExeca[13];       // naziv zeljene datoteke za pokretanje
 	 struct date Lazni,       //
-				 Temp;        //
+		     Temp;        //
 
 
 	 // otvori kofiguracijsku datoteku
@@ -76,7 +76,7 @@ main()
 	 // pokreni izvrsnu datoteku
 	 // ako se pojavi greska
 	 //   izbrisi privremenu datoteku
-	 //	  izadji u DOS sa prigodnom porukom i error codom
+	 //   izadji u DOS sa prigodnom porukom i error codom
 
 	 if(spawnl(P_WAIT,ImeExeca,NULL)==-1)
 		{ unlink("$$$$temp.$$$");
